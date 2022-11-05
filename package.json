@@ -1,0 +1,80 @@
+{
+  "name": "dossierFinance_assets",
+  "version": "0.1.0",
+  "description": "Internet Computer starter application",
+  "keywords": [
+    "Internet Computer",
+    "Motoko",
+    "JavaScript",
+    "Canister"
+  ],
+  "scripts": {
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build": "webpack",
+    "prebuild": "npm run copy:types",
+    "start": "webpack serve --mode development --env development ",
+    "prestart": "npm run copy:types",
+    "copy:types": "rsync -avr .dfx/$(echo ${DFX_NETWORK:-'**'})/canisters/** --exclude='assets/' --exclude='idl/' --exclude='*.wasm' --exclude='*.most' --delete src/declarations"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "devDependencies": {
+    "@dfinity/agent": "0.14.0",
+    "@dfinity/candid": "0.13.3",
+    "@dfinity/principal": "0.13.3",
+    "assert": "2.0.0",
+    "buffer": "6.0.3",
+    "copy-webpack-plugin": "^10.2.4",
+    "css-loader": "^6.5.1",
+    "events": "3.3.0",
+    "html-webpack-plugin": "5.5.0",
+    "process": "0.11.10",
+    "stream-browserify": "3.0.0",
+    "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "5.3.1",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.8.4",
+    "util": "0.12.4",
+    "webpack": "5.69.1",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.4.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@dfinity/auth-client": "^0.14.0",
+    "@dfinity/authentication": "^0.14.0",
+    "@dfinity/identity": "^0.14.0",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.8.4",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.6",
+    "@mui/material": "^5.10.8",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "lit-html": "^2.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-script": "^2.0.5",
+    "react-scripts": "^5.0.1",
+    "uuid": "^9.0.0",
+    "web-vitals": "^2.1.4"
+  }
+}

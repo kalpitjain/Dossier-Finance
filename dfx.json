@@ -1,0 +1,35 @@
+{
+  "canisters": {
+    "dossierFinance": {
+      "main": "src/dossierFinance/main.mo",
+      "type": "motoko"
+    },
+    "dossierFinance_assets": {
+      "dependencies": [
+        "dossierFinance"
+      ],
+      "frontend": {
+        "entrypoint": "src/dossierFinance_assets/src/index.html"
+      },
+      "source": [
+        "src/dossierFinance_assets/assets",
+        "dist/dossierFinance_assets/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.9.3",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
